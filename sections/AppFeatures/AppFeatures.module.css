@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @media only screen and (max-width: 767px) {
   .image {
     width: 80px;
@@ -17,10 +17,32 @@
   margin-top: -25px;
 }
 .para h3 {
-  font-size: 1.2rem !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem !important;
 }
+/* .para div {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: black;
+  margin-bottom: 1rem;
+  animation: lineAnim 2s ease-in-out infinite;
+}
+@keyframes lineAnim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(130px);
+  }
+
+} 
+*/
 .para p {
   font-size: 1rem !important;
+  margin-bottom: 2rem;
 }
 /* .pading {
   margin-top: 9vw !important;
