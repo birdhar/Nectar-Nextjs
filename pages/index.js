@@ -6,6 +6,7 @@ import About from "../sections/about/About";
 import AppFeatures from "../sections/AppFeatures/AppFeatures";
 
 import Featured from "../sections/featured/Featured";
+import Footer from "../sections/Footer/Footer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -44,8 +45,8 @@ export default function Home() {
           <Element name="about">
             <About />
           </Element>
-          <Element name="about">
-            <AppFeatures />
+          <Element name="footer">
+            <Footer />
           </Element>
         </>
       )}

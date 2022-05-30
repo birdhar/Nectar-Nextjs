@@ -19,6 +19,7 @@ function Navbar({
   setVisibleElement,
 }) {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openPopup, setOpenPopup] = useState(false);
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -34,10 +35,6 @@ function Navbar({
     });
   }, []);
 
-  //   document.addEventListener("mousedown", () => {
-  //     setVisibleElement(false);
-  //     closePopup(false);
-  //   });
   return (
     <>
       <motion.div className={styles.header} data-scroll-section>
@@ -45,8 +42,6 @@ function Navbar({
           <div className={styles.logo}>
             <Image src="/images/dating/logoo.png" alt="logo" layout="fill" />
           </div>
-
-          {/* <h6 className={styles.headerlogo}>Nectar</h6> */}
 
           <img
             onClick={openMenu}
@@ -114,46 +109,50 @@ function Navbar({
             <br /> Your First Date
           </h2>
           <p>Find that special someone who really gets you</p>
-          <button disabled type="button" className={styles.btn}>
+          <button
+            // onClick={() => {
+            //   setOpenPopup(true);
+            //   console.log("hi");
+            // }}
+            onClick={() => console.log("hi")}
+            type="button"
+            className={styles.btn}
+          >
             Join the Club
           </button>
         </div>
         <div className={styles.down}>
-          <a href="#2" onClick={() => about("2")}>
+          <a href="#2">
             <img
               className={styles.downwhite}
               src="/images/datingNew/down.png"
             />
           </a>
-          <a href="#2" onClick={() => about("2")}>
+          <a href="#2">
             <img
               className={styles.downred}
               src="/images/datingNew/downred.png"
             />
           </a>
         </div>
-
-        {open && (
-          <div className={styles.popupbg}>
-            <div className={styles.popup}>
-              <h4>Don’t just swipe on photos</h4>
-              <h6>Nectar birds and bees, the instant way to meet people</h6>
-
-              <div className="d-flex justify-content-center gap-3 mt-5">
-                <img
-                  style={{ height: "40%" }}
-                  src="/images/datingNew/apple.png"
-                />
-                <img
-                  style={{ height: "40%" }}
-                  src="/images/datingNew/play.png"
-                />
-              </div>
-              <h4>Coming Soon...</h4>
-            </div>
-          </div>
-        )}
       </motion.div>
+      {openPopup && (
+        <div className={styles.popupbg}>
+          <div className={styles.popup}>
+            <h4>Don’t just swipe on photos</h4>
+            <h6>Nectar birds and bees, the instant way to meet people</h6>
+
+            <div className="d-flex justify-content-center gap-3 mt-5">
+              <img
+                style={{ height: "40%" }}
+                src="/images/datingNew/apple.png"
+              />
+              <img style={{ height: "40%" }} src="/images/datingNew/play.png" />
+            </div>
+            <h4>Coming Soon...</h4>
+          </div>
+        </div>
+      )}
     </>
   );
 }
